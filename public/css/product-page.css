@@ -1,0 +1,452 @@
+/* Navbar fashion */
+.navbar {
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 0.5rem 1.5rem; /* Adjusted padding for better spacing */
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* logo with Brand Styles */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Slightly larger brand font */
+    font-family: 'Dancing Script', cursive;
+    color: #3f3f3f;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-logo {
+    margin-right: 10px;
+    height: 45px; /* Slightly larger logo */
+}
+
+.brand-name {
+    font-weight: 700;
+    color: #3f3f3f;
+}
+
+.navbar-brand:hover .brand-name {
+    color: #ff8800; /* Change brand color on hover */
+}
+
+/* Navbar Link Styles */
+.navbar-nav .nav-link {
+    color: #3f3f3f;
+    margin-right: 1.2rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transitions */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff8800 !important; /* Dark yellow theme color on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+    
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff8800;
+    font-weight: bold;
+    border-bottom: 2px solid #ff8800; /* Underline effect for active link */
+}
+
+/* Icon Styles */
+.navbar-nav .nav-link i {
+    font-size: 1.4rem; /* Slightly larger icon size */
+    color: #3f3f3f;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link i:hover {
+    color: #ff8800;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border-color: transparent;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add focus effect for accessibility */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+    .navbar-nav .nav-link i {
+        font-size: 1.1rem; /* Reduce icon size */
+    }
+}
+
+/* Styles for the search form */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: #3f3f3f;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: #ff8800;
+}
+
+
+
+
+
+/* Reset some default margins and paddings */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+
+
+/* Banner Section Styles */
+.banner-section {
+    background: url('img/banner.jpg') no-repeat center center/cover; /* Replace 'img/banner.jpg' with your banner image path */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.banner-section .banner-content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.banner-section .banner-content p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+/* Sidebar Styles */
+.list-group {
+    background-color: #f8f9fa; /* Light background for the sidebar */
+    border: 1px solid #dee2e6; /* Light border around the sidebar */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the sidebar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.list-group-item {
+    background-color: transparent; /* Transparent background for items */
+    border: none; /* Remove border from items */
+    font-weight: bold; /* Bold text for items */
+    color: #333; /* Dark text color */
+    cursor: pointer; /* Pointer cursor for clickable items */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effects */
+}
+
+.list-group-item:hover {
+    background-color: #e2e6ea; /* Light gray background on hover */
+    color: #ff8800; /* Change text color on hover */
+}
+
+/* Custom Card Styling */
+.product-card .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-top: 50px; /* Adjusted for larger image overlap */
+    padding-bottom: 15px;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+    max-width: 160px; /* Small card width for larger screens */
+    margin: 20px auto; /* Center and space cards */
+    margin-top: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation for hover */
+    animation: fadeIn 0.5s ease-in; /* Initial fade-in animation */
+}
+
+/* Larger circular image with overlap effect */
+.product-card .card-img-top {
+    width: 100px; /* Increased size for circular image */
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: -40px; /* Adjusted to keep image centered above card */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth animation for hover */
+}
+
+/* Hover Effects */
+.product-card:hover .card {
+    transform: translateY(-10px); /* Move the card up slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.product-card:hover .card-img-top {
+    transform: translate(-50%, -10px) scale(1.1); /* Scale and move image up on hover */
+}
+
+/* Adjust card title and text spacing */
+.product-card .card-title {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+}
+
+.product-card .card-text {
+    font-size: 0.8em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.product-card .btn {
+    background-color: #d48806;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 0.8em;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background-color: #b37405;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Product Card Container */
+#product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+/* Responsive Layout for Different Screen Sizes */
+.product-card {
+    flex: 0 1 23%; /* Default to 4 cards per row */
+    max-width: 23%;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+
+/* Medium screens (tablets, 768px and up): 2 cards per row */
+@media (max-width: 992px) {
+    .product-card {
+        flex: 0 1 45%; /* 2 cards per row */
+        max-width: 45%;
+    }
+}
+
+/* Small screens (mobile, less than 768px): 1 card per row */
+@media (max-width: 768px) {
+    .product-card {
+        flex: 0 1 100%; /* 1 card per row */
+        max-width: 100%;
+    }
+
+    /* Adjust image size for smaller screens */
+    .product-card .card-img-top {
+        width: 80px; 
+        height: 80px;
+    }
+}
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text color */
+    padding: 40px 0;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+    margin-left: 12%;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ff8800; /* Accent color */
+}
+
+.footer p, .footer ul, .footer li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ff8800;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff8800;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222; /* Darker background for separation */
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
