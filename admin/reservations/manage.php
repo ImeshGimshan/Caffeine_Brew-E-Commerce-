@@ -16,6 +16,7 @@ $reservations = $reservationModel->getAll();
 
 $pageTitle = 'Manage Reservations';
 $currentPage = 'reservations';
+$customCSS = ['admin.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>
