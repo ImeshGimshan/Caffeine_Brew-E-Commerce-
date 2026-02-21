@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
 
 $pageTitle = 'Edit Product';
 $currentPage = 'products';
-$customCSS = ['editproduct.css'];
+$customCSS = ['admin.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>

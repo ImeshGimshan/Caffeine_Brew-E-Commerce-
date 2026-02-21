@@ -28,7 +28,7 @@ if (isset($_GET['delete'])) {
 
 $pageTitle = 'Manage Products';
 $currentPage = 'products';
-$customCSS = ['manageproducts.css'];
+$customCSS = ['admin.css'];
 
 $successMessage = SessionHelper::get('success_message');
 $errorMessage = SessionHelper::get('error_message');

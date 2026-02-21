@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 }
 
 $pageTitle = 'Register';
-$customCSS = ['register.css'];
+$customCSS = ['login.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>

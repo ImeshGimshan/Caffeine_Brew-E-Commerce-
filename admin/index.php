@@ -24,6 +24,7 @@ $totalReservations = count($reservationModel->getAll());
 
 $pageTitle = 'Admin Dashboard';
 $currentPage = 'dashboard';
+$customCSS = ['admin.css'];
 ?>
 
 <?php include dirname(__DIR__) . '/includes/header.php'; ?>

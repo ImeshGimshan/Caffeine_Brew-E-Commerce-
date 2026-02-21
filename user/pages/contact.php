@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contact'])) {
 
 $pageTitle = 'Contact Us';
 $currentPage = 'contact';
-$customCSS = ['contact-page.css'];
+$customCSS = ['pages.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>

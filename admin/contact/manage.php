@@ -15,6 +15,7 @@ $messages = $result->fetch_all(MYSQLI_ASSOC);
 
 $pageTitle = 'Contact Messages';
 $currentPage = 'contact';
+$customCSS = ['admin.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>

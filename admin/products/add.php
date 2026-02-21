@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
 
 $pageTitle = 'Add Product';
 $currentPage = 'products';
-$customCSS = ['addproduct.css'];
+$customCSS = ['admin.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>

@@ -11,7 +11,7 @@ SessionHelper::init();
 
 $pageTitle = 'About Us';
 $currentPage = 'about';
-$customCSS = ['about-page.css'];
+$customCSS = ['pages.css'];
 ?>
 
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>
