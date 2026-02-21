@@ -65,64 +65,88 @@ $customCSS = ['admin.css'];
 <?php include dirname(__DIR__, 2) . '/includes/header.php'; ?>
 <?php include dirname(__DIR__, 2) . '/includes/admin-navbar.php'; ?>
 
-<div class="container mt-4 mb-5">
-    <h1 class="mb-4"><i class="fas fa-plus"></i> Add New Product</h1>
-    
-    <div class="card">
-        <div class="card-body">
-            <?php if ($error): ?>
-                <div class="alert alert-danger"><?php echo $error; ?></div>
-            <?php endif; ?>
-            
-            <form method="post" action="" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label>Product Name *</label>
-                    <input type="text" name="name" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Description</label>
-                    <textarea name="description" class="form-control" rows="3"></textarea>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Price (Rs.) *</label>
-                        <input type="number" name="price" class="form-control" step="0.01" min="0" required>
-                    </div>
-                    
-                    <div class="form-group col-md-6">
-                        <label>Category *</label>
-                        <select name="category" class="form-control" required>
-                            <option value="">Select Category</option>
-                            <option value="Coffees">Coffee</option>
-                            <option value="Icecreams">Ice Cream</option>
-                            <option value="Cakes">Cakes</option>
-                            <option value="Buns">Buns</option>
-                            <option value="Pizza">Pizza</option>
-                            <option value="Bubble Tea">Bubble Tea</option>
-                            <option value="Juice">Juice</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Product Image</label>
-                    <input type="file" name="image" class="form-control-file" accept="image/*">
-                    <small class="form-text text-muted">Maximum file size: 5MB. Accepted formats: JPG, PNG, GIF</small>
-                </div>
-                
-                <div class="mt-4">
-                    <button type="submit" name="add_product" class="btn btn-primary btn-lg">
-                        <i class="fas fa-save"></i> Add Product
-                    </button>
-                    <a href="manage.php" class="btn btn-secondary btn-lg">
-                        <i class="fas fa-times"></i> Cancel
-                    </a>
-                </div>
-            </form>
-        </div>
+<!-- Page Header -->
+<div class="admin-header">
+    <h1><i class="fas fa-plus me-2"></i> Add New Product</h1>
+    <div class="admin-header-actions">
+        <a href="manage.php"
+           class="btn btn-sm" style="background:var(--light-cream);color:var(--dark-brown);border-radius:8px;padding:8px 18px;border:1px solid var(--cream);">
+            <i class="fas fa-arrow-left me-1"></i> Back to Products
+        </a>
     </div>
 </div>
 
-<?php include dirname(__DIR__, 2) . '/includes/footer.php'; ?>
+<div class="content-section admin-form" style="max-width:800px;">
+    <?php if ($error): ?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i><?php echo $error; ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    <?php endif; ?>
+
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label fw-semibold" style="color:var(--dark-brown);">Product Name *</label>
+            <input type="text" name="name" class="form-control" required
+                   placeholder="e.g. Caramel Latte">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-semibold" style="color:var(--dark-brown);">Description</label>
+            <textarea name="description" class="form-control" rows="3"
+                      placeholder="Short description of the product..."></textarea>
+        </div>
+
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold" style="color:var(--dark-brown);">Price (Rs.) *</label>
+                <input type="number" name="price" class="form-control" step="0.01" min="0" required
+                       placeholder="0.00">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold" style="color:var(--dark-brown);">Category *</label>
+                <select name="category" class="form-select" required>
+                    <option value="">Select Category</option>
+                    <option value="Coffees">Coffee</option>
+                    <option value="Icecreams">Ice Cream</option>
+                    <option value="Cakes">Cakes</option>
+                    <option value="Buns">Buns</option>
+                    <option value="Pizza">Pizza</option>
+                    <option value="Bubble Tea">Bubble Tea</option>
+                    <option value="Juice">Juice</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label fw-semibold" style="color:var(--dark-brown);">Product Image</label>
+            <input type="file" name="image" class="form-control" accept="image/*" id="imgInput">
+            <div class="form-text">Max 5 MB · JPG, PNG, GIF</div>
+            <div id="imgPreview" class="file-preview mt-2"></div>
+        </div>
+
+        <div class="d-flex gap-3">
+            <button type="submit" name="add_product"
+                    class="btn btn-lg px-4" style="background:var(--primary-brown);color:white;border-radius:10px;">
+                <i class="fas fa-save me-2"></i> Add Product
+            </button>
+            <a href="manage.php" class="btn btn-lg btn-outline-secondary px-4" style="border-radius:10px;">
+                <i class="fas fa-times me-2"></i> Cancel
+            </a>
+        </div>
+    </form>
+</div>
+
+<script>
+document.getElementById('imgInput').addEventListener('change', function () {
+    const preview = document.getElementById('imgPreview');
+    preview.innerHTML = '';
+    if (this.files && this.files[0]) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(this.files[0]);
+        preview.appendChild(img);
+    }
+});
+</script>
+
+<?php include dirname(__DIR__, 2) . '/includes/admin-footer.php'; ?>
