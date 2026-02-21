@@ -43,8 +43,8 @@
                             <i class="fas fa-user-circle"></i> Account
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/user/pages/profile.php"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/user/orders/orders.php"><i class="fas fa-shopping-bag"></i> My Orders</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="<?php echo BASE_URL; ?>/user/auth/logout.php">
                                 <i class="fas fa-sign-out-alt"></i> Logout
