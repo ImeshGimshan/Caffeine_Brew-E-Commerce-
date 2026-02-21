@@ -16,11 +16,33 @@ height: 90vh;
 
 #main-banner .carousel-inner {
     height: 100%;
+    background: #1a0f0a; /* prevents white flash during crossfade */
 }
 
 #main-banner .carousel-item {
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out !important;
+    display: block !important;
+}
+
+#main-banner .carousel-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Smooth crossfade override */
+#main-banner.carousel-fade .carousel-item {
+    transition: opacity 1.4s ease-in-out !important;
+}
+
+#main-banner.carousel-fade .carousel-item,
+#main-banner.carousel-fade .carousel-item.active {
+    transform: none !important;
 }
 
 #main-banner .carousel-item img {
@@ -61,7 +83,6 @@ height: 90vh;
     color: white;
     margin-bottom: 20px;
     text-shadow: 2px 4px 8px rgba(0,0,0,0.3);
-    animation: fadeInDown 1s ease;
 }
 
 #main-banner .carousel-caption p {
@@ -71,11 +92,9 @@ height: 90vh;
     margin-bottom: 35px;
     font-weight: 300;
     letter-spacing: 1px;
-    animation: fadeInUp 1s ease 0.3s both;
 }
 
 #main-banner .carousel-caption .btn {
-    animation: fadeInUp 1s ease 0.6s both;
     padding: 15px 40px;
     font-size: 1.1rem;
 }
@@ -398,6 +417,58 @@ height: 90vh;
     padding: 18px 50px;
     font-size: 1.2rem;
     margin: 0 10px;
+}
+
+/* Carousel slide buttons — white outline on dark overlay */
+.carousel-slide-btn {
+    border: 2px solid rgba(255,255,255,0.85);
+    color: #fff;
+    background: transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carousel-slide-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+}
+
+/* About section "Learn More" — brown outline on light background */
+.landing-brown-btn {
+    border: 2px solid var(--primary-brown);
+    color: var(--primary-brown);
+    background: transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-brown-btn:hover {
+    background-color: var(--primary-brown);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(111, 78, 55, 0.4);
+}
+
+/* CTA section buttons — both identical white outline on dark bg */
+.landing-cta-btn {
+    border: 2px solid rgba(255,255,255,0.85);
+    color: #fff;
+    background: transparent;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-cta-btn:hover {
+    background-color: var(--primary-brown);
+    border-color: var(--primary-brown);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(111, 78, 55, 0.5);
 }
 
 /* Animations */

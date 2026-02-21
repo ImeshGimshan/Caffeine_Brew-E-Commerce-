@@ -290,6 +290,24 @@
     font-size: 0.95rem;
 }
 
+/* About Page - CTA Buttons */
+.about-cta-btn {
+    background: transparent;
+    border: 2px solid var(--primary-brown);
+    color: var(--primary-brown);
+    padding: 14px 40px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-cta-btn:hover {
+    background-color: var(--primary-brown);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(111, 78, 55, 0.4);
+}
+
 /* Contact Page - Form Section */
 .contact-section {
     padding: 100px 0;
@@ -401,6 +419,48 @@
     width: 100%;
     padding: 16px;
     font-size: 1.1rem;
+}
+
+/* Contact submit button */
+.contact-submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--primary-brown), var(--dark-brown));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(111, 78, 55, 0.45);
+    opacity: 0.92;
+    color: white;
+}
+
+/* Contact social icon buttons */
+.contact-social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.contact-social-btn:hover {
+    background: rgba(255,255,255,0.3);
+    color: white;
+    transform: translateY(-3px);
 }
 
 /* Map Section */

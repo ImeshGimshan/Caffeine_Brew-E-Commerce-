@@ -7,49 +7,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--dark-brown) 0%, var(--primary-brown) 50%, var(--dark-brown) 100%);
+    background-color: var(--cream);
     padding: 40px 20px;
     position: relative;
     overflow: hidden;
 }
 
-.auth-container::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 600px;
-    height: 600px;
-    background: rgba(212, 175, 55, 0.1);
-    border-radius: 50%;
-    animation: float 20s infinite ease-in-out;
-}
-
-.auth-container::after {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -20%;
-    width: 500px;
-    height: 500px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    animation: float 15s infinite ease-in-out reverse;
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-50px) rotate(180deg);
-    }
-}
-
 .auth-card {
     background: white;
     border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 40px rgba(111,78,55,0.15);
     overflow: hidden;
     max-width: 450px;
     width: 100%;
@@ -142,6 +109,11 @@
     background: white;
 }
 
+.auth-form input[type="password"],
+.auth-form input[type="text"].toggle-visible {
+    padding-right: 44px;
+}
+
 .auth-form input:focus {
     border-color: var(--primary-brown);
     box-shadow: 0 0 0 4px rgba(111,78,55,0.1);
@@ -170,13 +142,19 @@
 
 .password-toggle {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: var(--medium-brown);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    box-shadow: none;
+    outline: none;
 }
 
 .password-toggle:hover {
