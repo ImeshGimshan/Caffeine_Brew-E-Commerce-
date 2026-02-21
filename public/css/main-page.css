@@ -1,0 +1,649 @@
+/* Navbar fashion */
+
+.navbar {
+    background-color: #fff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 0.5rem 1.5rem; /* Adjusted padding for better spacing */
+    position: relative;
+    z-index: 10;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* logo with Brand Styles */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Slightly larger brand font */
+    font-family: 'Dancing Script', cursive;
+    color: #3f3f3f;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-logo {
+    margin-right: 10px;
+    height: 45px; /* Slightly larger logo */
+}
+
+.brand-name {
+    font-weight: 700;
+    color: #3f3f3f;
+}
+
+.navbar-brand:hover .brand-name {
+    color: #ff8800; /* Change brand color on hover */
+}
+
+/* Navbar Link Styles */
+.navbar-nav .nav-link {
+    color: #3f3f3f;
+    margin-right: 1.2rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transitions */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff8800 !important; /* Dark yellow theme color on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
+    
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff8800;
+    font-weight: bold;
+    border-bottom: 2px solid #ff8800; /* Underline effect for active link */
+}
+
+/* Icon Styles */
+.navbar-nav .nav-link i {
+    font-size: 1.4rem; /* Slightly larger icon size */
+    color: #3f3f3f;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link i:hover {
+    color: #ff8800;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border-color: transparent;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add focus effect for accessibility */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+    .navbar-nav .nav-link i {
+        font-size: 1.1rem; /* Reduce icon size */
+    }
+}
+
+/* Styles for the search form */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: #3f3f3f;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.search-button:hover {
+    color: #ff8800;
+}
+
+
+
+/*maib banner*/
+
+#main-banner {
+    position: relative;
+    height: 600px; /* Adjust as needed */
+    overflow: hidden; /* Hide any overflow */
+}
+
+/* Ensure images are responsive and cover the container */
+.carousel-inner {
+    height: 100%; 
+    
+}
+
+.carousel-item img {
+    width: 100%; 
+    height:100%; 
+    object-fit: cover; /* Cover the container without stretching */
+    object-position: center; /* Center the image */
+}
+
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65); 
+    z-index: 5; 
+}
+
+
+.carousel-caption {
+    position: absolute;
+    top: 40%; 
+    margin-left: 10%;
+    transform: translate(-50%, -50%); 
+    color: rgb(255, 255, 255); 
+    text-align: center; 
+    z-index: 10; 
+    display: block;
+    width: 80%;
+    
+}
+
+.carousel-caption p {
+    font-size: 1.0rem; 
+    margin-right: 28%;
+ 
+}
+
+.carousel-caption h1 {
+    font-size: 3.0rem; 
+}
+
+
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+.carousel-caption .btn {
+    margin-top: 20px; 
+    padding: 8px 30px; 
+    font-size: 1.2rem; 
+    margin-right: 33%;
+    color: aliceblue;
+}
+
+
+/*responsive devices*/
+@media (max-width: 1200px) {
+    .carousel-caption {
+        width: 85%;
+    }
+    .carousel-caption p {
+        font-size: 1.3rem;
+    }
+    .carousel-caption h1 {
+        font-size: 2.2rem;
+    }
+    .carousel-caption .btn {
+        font-size: 1.1rem;
+        padding: 9px 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .carousel-caption {
+        width: 90%;
+    }
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+    .carousel-caption .btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        width: 95%;
+    }
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+    .carousel-caption .btn {
+        font-size: 0.9rem;
+        padding: 7px 14px;
+    }
+
+    #main-banner {
+        height: 400px; /* Reduce height for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        width: 100%;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption .btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    #main-banner {
+        height: 300px; /* Further reduce height on very small screens */}
+}
+
+@media (max-width: 400px) {
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    .carousel-caption h1 {
+        font-size: 1.0rem;
+    }
+    .carousel-caption .btn {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+}
+
+
+
+
+
+/*Middle section items*/
+
+
+#featured-items h2 {
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+#featured-items .lead {
+    color: #7a7a7a;
+}
+
+#featured-items .card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+#featured-items .card:hover {
+    transform: translateY(-10px);
+}
+
+#featured-items .card-title {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+#featured-items .card-text {
+    color: #7a7a7a;
+    font-size: 1rem;
+}
+
+#featured-items .btn-warning {
+    background-color: #ff8800;
+    border: none;
+    color: #fff;
+}
+
+#featured-items .btn-warning:hover {
+    background-color: #ff8800;
+}
+
+#products img {
+    width: 70px;
+    margin-bottom: 2px;
+}
+
+#products p {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Customer Reviews Carousel*/
+
+#reviews {
+    background-color: #d8d5d0; /* Subtle background tone */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+}
+
+#reviews h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: #3f3f3f;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.review-card {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border: 2px solid #ff8800;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.review-author {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #3f3f3f;
+    margin-bottom: 5px;
+}
+
+.review-stars {
+    color: #ff8800; /* Dark yellow for stars */
+    font-size: 1.2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000000; /* Dark icon background */
+    border-radius: 30%;
+    padding: 10px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #ff8800; /* Change to theme color on hover */
+}
+
+
+
+/* Combo our packs--*/
+#popular-combos {
+    background-color: #f4f1eb; /* Subtle background tone */
+    border-radius: 15px;
+    padding: 50px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#popular-combos h2 {
+    color: #3f3f3f;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.combo-card {
+    background-color: white;
+    border: 2px solid #ffcc66; /* Dark yellow border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.combo-image-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.combo-image-wrapper img {
+    transition: transform 0.3s ease;
+}
+
+.combo-card:hover .combo-image-wrapper img {
+    transform: scale(1.05); /* Image zoom effect on hover */
+}
+
+.combo-card h5 {
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.combo-card p {
+    color: #6f6f6f;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.combo-price {
+    font-size: 1.2rem;
+    color: #2f2c2c; /* Dark yellow for price */
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.combo-card .btn {
+    background-color: #ff8800;
+    color: w#ff8800;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.combo-card .btn:hover {
+    background-color: #000000; /* Dark yellow on hover */
+    color: #ff8800;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+/* Discount Section styles */
+#deals {
+    position: relative;
+    background-image: url('img/deals.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Make sure the image covers the entire section */
+    background-position: center; /* Center the background image */
+    color: #fff; /* White text color for contrast */
+    padding: 50px 0;
+    text-align: center;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+/* Opacity overlay */
+#deals::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 47, 47, 0.8); /* Dark brown with 80% opacity */
+    z-index: 0; /* Set behind the content */
+}
+
+/* Content styles */
+#deals h2,
+#deals p,
+#deals .countdown-timer,
+#deals .btn {
+    position: relative;
+    z-index: 1; /* Place content above the overlay */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ff8800; /* Dark yellow button */
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #080702; /* Darker yellow for hover */
+}
+
+
+
+
+
+
+
+
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text color */
+    padding: 40px 0;
+    
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+    margin-left: 12%;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ff8800; /* Accent color */
+}
+
+.footer p, .footer ul, .footer li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #ff8800;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #ff8800;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+    .footer-bottom{
+        justify-content: center;
+    }
+}
+
+.footer-bottom {
+    
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222; /* Darker background for separation */
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
