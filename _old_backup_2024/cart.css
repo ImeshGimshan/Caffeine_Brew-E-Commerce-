@@ -1,0 +1,179 @@
+    /* General Styling */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container Styling */
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        overflow-x: auto; 
+    }
+
+    /* Heading Styling */
+    .heading {
+        font-size: 2.5rem; 
+        font-weight: 700;
+        color: #ff8800; 
+        text-align: center; 
+        margin-bottom: 30px;
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        table-layout: fixed; 
+    }
+
+    thead th {
+        background-color: #ff8800;
+        color: #fff;
+        padding: 15px;
+        text-align: left;
+        font-size: 1rem;
+        border-bottom: 2px solid #ddd;
+        word-wrap: break-word; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+
+    tbody td {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    /* Product Image Styling */
+    tbody td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    /* Action Button Styling */
+    tbody td .btn {
+        background-color: #ff8800;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+    }
+
+    tbody td .btn:hover {
+        background-color: #e67600;
+    }
+
+    /* Total Price Styling */
+    .total-price {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.5rem; 
+        font-weight: 700; 
+        color: #333; 
+        margin-top: 20px; 
+    }
+
+    .total-price #total-price {
+        background-color: #ff8800; 
+        color: #fff; 
+        padding: 10px 15px; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+
+    /* Table Footer Styling */
+    .table-footer {
+        display: flex;
+        justify-content: flex-end; 
+        gap: 15px; 
+        margin-top: 20px; 
+    }
+
+    /* Button Styling */
+    .table-footer .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    /* Secondary Button Styling */
+    .table-footer .btn-secondary {
+        text-decoration: none;
+        background-color: #6c757d; 
+        color: #fff;
+    }
+
+    .table-footer .btn-secondary:hover {
+        background-color: #ff8800;
+    }
+
+    /* Primary Button Styling */
+    .table-footer .btn-primary {
+        background-color: #ff8800; 
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .table-footer .btn-primary:hover {
+        background-color: #e67600;
+    }
+
+    /* Danger Button Styling */
+    .table-footer .btn-danger {
+        background-color: #dc3545; 
+        color: #fff;
+    }
+
+    .table-footer .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    /* Button Hover and Interaction */
+    .table-footer .btn:hover {
+        transform: translateY(-2px); 
+    }
+
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+        thead th, tbody td {
+            padding: 8px; 
+            font-size: 0.9rem; 
+            line-height: 1.4;
+            word-wrap: break-word; 
+        }
+
+        tbody td {
+            font-size: 0.8rem; 
+            padding: 8px; 
+        }
+
+        tbody td img {
+            width: 40px;
+            height: 40px;
+        }
+
+        
+        .heading {
+            font-size: 2rem; 
+        }
+    }

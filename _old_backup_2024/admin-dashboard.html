@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-image: url(img/slide2.jpg);
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container2 {
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Add space between container2 and container */
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            font-size: 1.2em;
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #ff8800;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+        }
+
+        .button:hover {
+            background-color: #3f3f3f;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .button {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .button {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container2">
+        <h1>Caffeine Brew Admin Dashboard</h1>
+    </div>
+    <br><br><br>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <a href="addproducts.php" class="button">Add Products</a>
+        <a href="manageproducts.php" class="button">Manage Products</a>
+        <a href="reservationdetails.php" class="button">Reservation Details</a>
+    </div>
+</body>
+</html>

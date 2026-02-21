@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Caffeine Brew</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="product-page.css"> 
+</head>
+<body>
+
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" class="navbar-logo">
+        <span class="brand-name">Caffeine Brew</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="main-page.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link " href="about-page.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact-page.html">Contact Us</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">Products</a></li>
+<!-- Cart and Search Icons -->
+<li class="nav-item">
+    <form class="search-form" onsubmit="performSearch(event)">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+    </form>
+</li>
+<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </div>
+</nav>
+    <!-- Banner Section -->
+    <section class="banner-section text-center">
+        <div class="banner-content">
+            <h1>OUR MENU</h1>
+            <p>Choose from our delicious selection</p>
+        </div>
+    </section>
+
+
+    
+
+    <!-- Product Menu Section -->
+<section class="menu-section container my-5">
+    <div class="row">
+       
+        <!-- Sidebar for categories -->
+<div class="col-md-3">
+    <ul class="list-group">
+        <li class="list-group-item" onclick="filterProducts('coffee')">Coffee</li>
+        <li class="list-group-item" onclick="filterProducts('ice-cream')">Ice Cream</li>
+        <li class="list-group-item" onclick="filterProducts('cakes')">Cakes</li>
+        <li class="list-group-item" onclick="filterProducts('buns')">Buns</li>
+        <li class="list-group-item" onclick="filterProducts('pizza')">Pizza</li>
+        <li class="list-group-item" onclick="filterProducts('bubble-tea')">Bubble Tea</li>
+        <li class="list-group-item" onclick="filterProducts('juice')">Juice</li>
+    </ul>
+</div>
+
+
+
+<!-- Product Cards Section -->
+<div class="col-md-9">
+    <div class="row" id="product-cards">
+       
+        <!-- Coffee Product Cards -->
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee1.jpg" class="card-img-top" alt="Espresso">
+        <div class="card-body">
+            <h5 class="card-title">Espresso</h5>
+            <p class="card-text">$3.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee2.jpg" class="card-img-top" alt="Cappuccino">
+        <div class="card-body">
+            <h5 class="card-title">Cappuccino</h5>
+            <p class="card-text">$4.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee3.jpg" class="card-img-top" alt="Latte">
+        <div class="card-body">
+            <h5 class="card-title">Latte</h5>
+            <p class="card-text">$4.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee4.jpg" class="card-img-top" alt="Americano">
+        <div class="card-body">
+            <h5 class="card-title">Americano</h5>
+            <p class="card-text">$3.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee5.jpg" class="card-img-top" alt="Flat White">
+        <div class="card-body">
+            <h5 class="card-title">Flat White</h5>
+            <p class="card-text">$4.20</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee6.jpg" class="card-img-top" alt="Mocha">
+        <div class="card-body">
+            <h5 class="card-title">Mocha</h5>
+            <p class="card-text">$4.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee7.jpg" class="card-img-top" alt="Macchiato">
+        <div class="card-body">
+            <h5 class="card-title">Macchiato</h5>
+            <p class="card-text">$3.95</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="coffee">
+    <div class="card">
+        <img src="img/coffee8.jpg" class="card-img-top" alt="Affogato">
+        <div class="card-body">
+            <h5 class="card-title">Affogato</h5>
+            <p class="card-text">$4.80</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+   
+        <!-- Ice Cream Product Cards -->
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream1.jpg" class="card-img-top" alt="Vanilla Ice Cream">
+        <div class="card-body">
+            <h5 class="card-title">Vanilla Ice Cream</h5>
+            <p class="card-text">$2.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream2.jpg" class="card-img-top" alt="Chocolate Ice Cream">
+        <div class="card-body">
+            <h5 class="card-title">Chocolate Ice Cream</h5>
+            <p class="card-text">$3.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream3.jpg" class="card-img-top" alt="Strawberry Ice Cream">
+        <div class="card-body">
+            <h5 class="card-title">Strawberry Ice Cream</h5>
+            <p class="card-text">$2.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream4.jpg" class="card-img-top" alt="Mint Chocolate Chip">
+        <div class="card-body">
+            <h5 class="card-title">Mint Chocolate Chip</h5>
+            <p class="card-text">$3.25</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream5.jpg" class="card-img-top" alt="Cookies & Cream">
+        <div class="card-body">
+            <h5 class="card-title">Cookies & Cream</h5>
+            <p class="card-text">$3.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream6.jpg" class="card-img-top" alt="Mango Sorbet">
+        <div class="card-body">
+            <h5 class="card-title">Mango Sorbet Cream</h5>
+            <p class="card-text">$2.95</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream7.jpg" class="card-img-top" alt="Pistachio Ice Cream">
+        <div class="card-body">
+            <h5 class="card-title">Pistachio Ice Cream</h5>
+            <p class="card-text">$3.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="ice-cream">
+    <div class="card">
+        <img src="img/icecream8.jpg" class="card-img-top" alt="Rocky Road">
+        <div class="card-body">
+            <h5 class="card-title">Rocky Road Cream</h5>
+            <p class="card-text">$3.85</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+       
+<!-- Cakes Product Cards -->
+<div class="col-md-4 product-card" data-category="cakes">
+    <div class="card">
+        <img src="img/cake1.jpg" class="card-img-top" alt="Chocolate Cake">
+        <div class="card-body">
+            <h5 class="card-title">Chocolate Cake</h5>
+            <p class="card-text">$5.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="cakes">
+    <div class="card">
+        <img src="img/cake2.jpg" class="card-img-top" alt="Red Velvet Cake">
+        <div class="card-body">
+            <h5 class="card-title">Red Velvet Cake</h5>
+            <p class="card-text">$6.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="cakes">
+    <div class="card">
+        <img src="img/cake3.jpg" class="card-img-top" alt="Lemon Drizzle Cake">
+        <div class="card-body">
+            <h5 class="card-title">Lemon Cake</h5>
+            <p class="card-text">$4.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="cakes">
+    <div class="card">
+        <img src="img/cake4.jpg" class="card-img-top" alt="Carrot Cake">
+        <div class="card-body">
+            <h5 class="card-title">Carrot Cake</h5>
+            <p class="card-text">$5.25</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<!-- Buns Product Cards -->
+<div class="col-md-4 product-card" data-category="buns">
+    <div class="card">
+        <img src="img/bun1.jpg" class="card-img-top" alt="Cinnamon Roll">
+        <div class="card-body">
+            <h5 class="card-title">Cinnamon Roll</h5>
+            <p class="card-text">$2.80</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="buns">
+    <div class="card">
+        <img src="img/bun2.jpg" class="card-img-top" alt="Butter Croissant">
+        <div class="card-body">
+            <h5 class="card-title">Butter Croissant</h5>
+            <p class="card-text">$2.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="buns">
+    <div class="card">
+        <img src="img/bun3.jpg" class="card-img-top" alt="Garlic Bread">
+        <div class="card-body">
+            <h5 class="card-title">Garlic Bread</h5>
+            <p class="card-text">$3.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="buns">
+    <div class="card">
+        <img src="img/bun4.jpg" class="card-img-top" alt="Cheese Bun">
+        <div class="card-body">
+            <h5 class="card-title">Cheese Bun</h5>
+            <p class="card-text">$3.20</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<!-- Pizza Product Cards -->
+<div class="col-md-4 product-card" data-category="pizza">
+    <div class="card">
+        <img src="img/pizza1.jpg" class="card-img-top" alt="Margherita Pizza">
+        <div class="card-body">
+            <h5 class="card-title">Margherita Pizza</h5>
+            <p class="card-text">$8.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="pizza">
+    <div class="card">
+        <img src="img/pizza2.jpg" class="card-img-top" alt="Pepperoni Pizza">
+        <div class="card-body">
+            <h5 class="card-title">Pepperoni Pizza</h5>
+            <p class="card-text">$9.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="pizza">
+    <div class="card">
+        <img src="img/pizza3.jpg" class="card-img-top" alt="BBQ Chicken Pizza">
+        <div class="card-body">
+            <h5 class="card-title">BBQ Chicken </h5>
+            <p class="card-text">$10.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="pizza">
+    <div class="card">
+        <img src="img/pizza4.jpg" class="card-img-top" alt="Veggie Supreme">
+        <div class="card-body">
+            <h5 class="card-title">Veggie Supreme</h5>
+            <p class="card-text">$8.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bubble Teas Product Cards -->
+<div class="col-md-4 product-card" data-category="bubble-tea">
+    <div class="card">
+        <img src="img/bubbletea1.jpg" class="card-img-top" alt="Classic Milk Tea">
+        <div class="card-body">
+            <h5 class="card-title">Classic Milk bubble Tea</h5>
+            <p class="card-text">$4.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="bubble-tea">
+    <div class="card">
+        <img src="img/bubbletea2.jpg" class="card-img-top" alt="Taro Milk Tea">
+        <div class="card-body">
+            <h5 class="card-title">Taro Milk bubble Tea</h5>
+            <p class="card-text">$4.75</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="bubble-tea">
+    <div class="card">
+        <img src="img/bubbletea3.jpg" class="card-img-top" alt="Mango Bubble Tea">
+        <div class="card-body">
+            <h5 class="card-title">Mango Bubble Tea</h5>
+            <p class="card-text">$5.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="bubble-tea">
+    <div class="card">
+        <img src="img/bubbletea4.jpg" class="card-img-top" alt="Strawberry Milk Tea">
+        <div class="card-body">
+            <h5 class="card-title">Strawberry Milk Tea</h5>
+            <p class="card-text">$5.25</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<!-- Juice Product Cards -->
+<div class="col-md-4 product-card" data-category="juice">
+    <div class="card">
+        <img src="img/juice1.jpg" class="card-img-top" alt="Orange Juice">
+        <div class="card-body">
+            <h5 class="card-title">Orange Juice</h5>
+            <p class="card-text">$3.00</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="juice">
+    <div class="card">
+        <img src="img/juice2.jpg" class="card-img-top" alt="Apple Juice">
+        <div class="card-body">
+            <h5 class="card-title">Apple Juice</h5>
+            <p class="card-text">$2.80</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="juice">
+    <div class="card">
+        <img src="img/juice3.jpg" class="card-img-top" alt="Pineapple Juice">
+        <div class="card-body">
+            <h5 class="card-title">Pineapple Juice</h5>
+            <p class="card-text">$3.50</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 product-card" data-category="juice">
+    <div class="card">
+        <img src="img/juice4.jpg" class="card-img-top" alt="Grapefruit Juice">
+        <div class="card-body">
+            <h5 class="card-title">Grapefruit Juice</h5>
+            <p class="card-text">$3.20</p>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="footer-col">
+                <h4>About Us</h4>
+                <p>Caffeine Brew offers the finest coffee and beverages with a cozy ambiance. Come and enjoy a perfect cup with us.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Products</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: info@caffeinebrew.com</li>
+                    <li>Phone: +1 (123) 456-7890</li>
+                    <li>Address: 123 Coffee St, Mocha City</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Caffeine Brew. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="product-page.js"></script>
+</body>
+</html>

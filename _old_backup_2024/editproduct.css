@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-image: url("img/banner4.jpg");
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for form */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form Section */
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Form heading */
+form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Input fields styling */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    margin: 5px 0;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Submit button styling */
+form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff8800;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* Hover effect for submit button */
+form button:hover {
+    background-color: #333;
+}
