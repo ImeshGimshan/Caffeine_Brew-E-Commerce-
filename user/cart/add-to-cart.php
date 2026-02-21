@@ -11,6 +11,8 @@ require_once SRC_PATH . '/helpers/SecurityHelper.php';
 
 SessionHelper::init();
 
+$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
     $productId = intval($_POST['product_id']);
     $quantity = isset($_POST['quantity']) ? intval($_POST['quantity']) : 1;
@@ -23,20 +25,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
         $cartModel = new Cart();
         $userId = SessionHelper::getUserId();
         
-        // Add to cart
         if ($cartModel->add($productId, $product['name'], $product['price'], $quantity, $userId)) {
+            if ($isAjax) {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => true, 'cartCount' => $cartModel->getCount($userId)]);
+                exit();
+            }
             $_SESSION['success_message'] = 'Product added to cart!';
         } else {
+            if ($isAjax) {
+                header('Content-Type: application/json');
+                echo json_encode(['success' => false, 'message' => 'Failed to add product to cart.']);
+                exit();
+            }
             $_SESSION['error_message'] = 'Failed to add product to cart.';
         }
     } else {
+        if ($isAjax) {
+            header('Content-Type: application/json');
+            echo json_encode(['success' => false, 'message' => 'Product not found.']);
+            exit();
+        }
         $_SESSION['error_message'] = 'Product not found.';
     }
-    
-    // Redirect back to products page
-    header("Location: " . BASE_URL . "/user/products/products.php");
-    exit();
-} else {
-    header("Location: " . BASE_URL . "/user/products/products.php");
-    exit();
 }
+
+// Fallback redirect for non-AJAX
+header("Location: " . BASE_URL . "/user/products/products.php");
+exit();

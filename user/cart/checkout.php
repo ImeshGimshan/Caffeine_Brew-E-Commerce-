@@ -5,6 +5,7 @@
 
 require_once dirname(__DIR__, 2) . '/config/config.php';
 require_once SRC_PATH . '/models/Cart.php';
+require_once SRC_PATH . '/models/Order.php';
 require_once SRC_PATH . '/helpers/SessionHelper.php';
 require_once SRC_PATH . '/helpers/SecurityHelper.php';
 
@@ -36,17 +37,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['place_order'])) {
     if (empty($name) || empty($email) || empty($phone) || empty($address) || empty($paymentMethod)) {
         $error = 'Please fill in all fields';
     } else {
-        // Here you would typically:
-        // 1. Create order in database
-        // 2. Process payment
-        // 3. Clear cart
-        // 4. Send confirmation email
-        
-        // For now, just clear cart and show success
-        $cartModel->clear(SessionHelper::getUserId());
-        
-        header("Location: " . BASE_URL . "/user/cart/order-success.php");
-        exit();
+        $userId = SessionHelper::getUserId();
+        $shippingAddress = $name . ', ' . $phone . ', ' . $email . ' | ' . $address;
+
+        $orderModel = new Order();
+        $orderId = $orderModel->create($userId, $grandTotal, $paymentMethod, $shippingAddress, $cartItems);
+
+        if ($orderId) {
+            $cartModel->clear($userId);
+            header("Location: " . BASE_URL . "/user/cart/order-success.php?order_id=" . $orderId);
+            exit();
+        } else {
+            $error = 'Failed to place order. Please try again.';
+        }
     }
 }
 ?>

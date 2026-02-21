@@ -20,5 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cart_id']) && isset($
     }
 }
 
+$isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+if ($isAjax) {
+    header('Content-Type: application/json');
+    echo json_encode(['success' => true]);
+    exit();
+}
+
 header("Location: cart.php");
 exit();
